@@ -1,9 +1,22 @@
+{% load static %}
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+        <title>Mi Primer Proyecto</title>
+    </head>
+
 {% if latest_questions_list %}
-    <ul>
-    {% for question  in latest_questions_list %}
-        <li><a href="{% url 'polls:detail' question.id %}">{{question.question_text}}</a></li>
-    {% endfor %}    
-    </ul>
+    <header>
+        <h1>Bienvenido</h1>
+        <p><strong>Acontinuacion podras votar en la categoria que desees las veces que quieras!</strong></p>
+    </header>
+    <main>
+        <h2>Elige una opcion!</h2>
+        <ul>
+        {% for question  in latest_questions_list %}
+            <li><a href="{% url 'polls:detail' question.id %}">{{question.question_text}}</a></li>
+        {% endfor %}    
+        </ul>
+    </main>
 
 {% else %}
     <p>no polls are available.</p>

@@ -1,3 +1,8 @@
+{% load static %}
+    <head>
+        <title>resultados</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style_result.css' %}">
+
 <h1>{{ question.question_text }}</h1>
 <ul>
 {% for choice in question.choice_set.all %} 

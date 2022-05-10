@@ -1,0 +1,17 @@
+body {
+    background-color: #000005;
+    height: 100%;
+    width: 100%;
+    background-image: url("https://static.platzi.com/media/user_upload/astronauta%20pla-0dfa9554-b2da-4084-a81c-fd0f6e263b5b.jpg");
+    background-repeat: no-repeat;
+    background-size: 500px, 500px;
+    background-position-x: center;
+    background-position-y: center;
+    text-align: center;
+    color: #f0f0f0;
+}
+header {
+    text-align: center;
+    opacity: 0.9;
+    color: white;
+}
