@@ -30,3 +30,12 @@ main {
     text-align: center;
     color: white;
 }
+
+a {
+    color: white;
+    list-style: none;
+    text-decoration-line: none;
+    text-decoration-color: none;
+    text-decoration-style: none;
+
+}
