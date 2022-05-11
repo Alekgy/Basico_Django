@@ -3,8 +3,7 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/style_detail.css' %}">
         <title>{{ question.question_text }}</title>
     </head>
-<form action="{% url 'polls:vote' question.id %}" method="post">
-{% csrf_token %}
+<form action="{% url 'polls:vote' question.id %}" method="post">{% csrf_token %}
 <fieldset>
     <header>
     <legend><h1>{{ question.question_text }}</h1></legend>
