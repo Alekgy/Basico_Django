@@ -2,3 +2,11 @@ body {
     background-image: url("https://static.platzi.com/media/blog/nunca-pares-aprender-blog-og-006f3827-7f46-4c3d-8912-8d91ea3f75d3.png");
     text-align: center;
 }
+a {
+    color: white;
+    list-style: none;
+    text-decoration-line: none;
+    text-decoration-color: none;
+    text-decoration-style: none;
+
+}

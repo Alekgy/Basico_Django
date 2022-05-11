@@ -12,6 +12,7 @@ body {
 }
 
 header {
+    margin-top: 30%;
     height: 25%;
     width: 75%;
     display: inline-block;
