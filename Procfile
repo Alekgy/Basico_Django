@@ -1,1 +1,1 @@
-web: python website/manage.py runserver 0.0.0.0:$PORT
+web: python premios_platziapp/manage.py runserver 0.0.0.0:$PORT
