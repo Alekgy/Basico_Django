@@ -12,8 +12,10 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
-import os
 from django.core.exceptions import ImproperlyConfigured
+import environ
+import os
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,16 +28,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 
-def get_env_value(env_variable):
-    try:
-        return os.environ[env_variable]
-    except KeyError as error:
-        error_msg = 'Set the {} environment variable'.format(error)
-        print(error)
-        #raise ImproperlyConfigured(error_msg)
+env = environ.Env()
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
-
-SECRET_KEY = get_env_value('SECRET_KEY')
+SECRET_KEY = env('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
