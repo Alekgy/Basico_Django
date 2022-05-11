@@ -1,3 +1,4 @@
+
 """
 Django settings for premios_platziapp project.
 
@@ -11,6 +12,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import os
+from django.core.exceptions import ImproperlyConfigured
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,7 +23,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-=$g-q%5+a&)44vj5$cu6i^cn0tvuil#iqwqze#61a_))zemkas'
+
+
+
+def get_env_value(env_variable):
+    try:
+        return os.environ[env_variable]
+    except KeyError as error:
+        error_msg = 'Set the {} environment variable'.format(error)
+        print(error)
+        #raise ImproperlyConfigured(error_msg)
+
+
+SECRET_KEY = get_env_value('SECRET_KEY')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
